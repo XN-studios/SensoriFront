@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Sensors S.p.a.",
+      "entries": [
+        {
+          "id": 1,
+          "label": "capannone 1",
+          "results": [
+            {
+              "id": 1,
+              "oxygen": 130,
+              "CO2": 75,
+              "temperature": 35,
+              "date": "Lug 2nd",
+              "time": "15:30"
+            },
+            {
+              "id": 2,
+              "oxygen": 135,
+              "CO2": 70,
+              "temperature": 34,
+              "date": "Lug 2nd",
+              "time": "16:00"
+            },
+            {
+              "id": 3,
+              "oxygen": 132,
+              "CO2": 80,
+              "temperature": 34,
+              "date": "Lug 2nd",
+              "time": "16:30"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "label": "capannone 2",
+          "results": [
+            {
+              "id": 1,
+              "oxygen": 120,
+              "CO2": 95,
+              "temperature": 35,
+              "date": "Lug 2nd",
+              "time": "15:30"
+            },
+            {
+              "id": 2,
+              "oxygen": 125,
+              "CO2": 90,
+              "temperature": 35,
+              "date": "Lug 2nd",
+              "time": "16:00"
+            },
+            {
+              "id": 3,
+              "oxygen": 122,
+              "CO2": 90,
+              "temperature": 34,
+              "date": "Lug 2nd",
+              "time": "16:30"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "label": "capannone 3",
+          "results": [
+            {
+              "id": 1,
+              "oxygen": 130,
+              "CO2": 75,
+              "temperature": 35,
+              "date": "Lug 2nd",
+              "time": "15:30"
+            },
+            {
+              "id": 2,
+              "oxygen": 135,
+              "CO2": 70,
+              "temperature": 34,
+              "date": "Lug 2nd",
+              "time": "16:00"
+            },
+            {
+              "id": 3,
+              "oxygen": 132,
+              "CO2": 80,
+              "temperature": 34,
+              "date": "Lug 2nd",
+              "time": "16:30"
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "id": 2,
+      "username": "Gianni",
+      "entries": [
+        {
+          "id": 1,
+          "label": "Sondaggio genere",
+          "uomini": 56,
+          "donne": 92
+        }
+      ]
+    }
+  ]
+}
