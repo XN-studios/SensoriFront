@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  margin: 5px;
+  margin: 15px;
   padding: 0;
 }
 
@@ -29,7 +29,7 @@ body {
 
 .btn {
   display: inline-block;
-  background: #000;
+  background-color: steelblue;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -52,6 +52,11 @@ body {
 .btn-block {
   display: block;
   width: 100%;
+}
+
+.back-btn {
+  float: 'right';
+  background-color: 'steelblue';
 }
 
 .entry {

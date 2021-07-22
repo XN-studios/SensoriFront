@@ -36,7 +36,7 @@ export default function SignUp() {
 
     return (
         <div>
-            <Card>
+            <Card className="log-in">
                 <Card.Body>
                     <h2 className="text-center mb-4">Sign Up</h2>
                     <Form onSubmit={handleSubmit}>
@@ -57,8 +57,8 @@ export default function SignUp() {
                     </Form>
                 </Card.Body>
             </Card>
-            <div className="w-100 text-center mt-2">
-                Already have an account? <Link to='/login'>Log In</Link>
+            <div className="text-center mt-2">
+                Already have an account?<Link to='/login'>Log In</Link>
             </div>
         </div>
     )

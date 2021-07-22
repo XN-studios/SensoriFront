@@ -44,7 +44,7 @@ export default function UpdateProfile() {
 
     return (
         <div>
-            <Card>
+            <Card className="log-in">
                 <Card.Body>
                     <h2 className="text-center mb-4">Update Profile</h2>
                     <Form onSubmit={handleSubmit}>
@@ -68,7 +68,7 @@ export default function UpdateProfile() {
                     </Form>
                 </Card.Body>
             </Card>
-            <div className="w-100 text-center mt-2">
+            <div className="text-center mt-2">
                 <Link to='/'>Cancel</Link>
             </div>
         </div>

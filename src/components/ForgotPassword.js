@@ -29,7 +29,7 @@ export default function ForgotPassword() {
 
     return (
         <div>
-            <Card>
+            <Card className="log-in">
                 <Card.Body>
                     <h2 className="text-center mb-4">Password Reset</h2>
                     <Form onSubmit={handleSubmit}>
@@ -41,13 +41,13 @@ export default function ForgotPassword() {
                         </Form.Group>
                         <Button disabled={loading} className="w-100" type="submit">Send Link</Button>
                     </Form>
-                    <div className="w-100 text-center mt-2">
-                        <Link to="/login">Login</Link>
+                    <div className="text-center mt-2">
+                        <Link to="/login">Go to login</Link>
                     </div>
                 </Card.Body>
             </Card>
-            <div className="w-100 text-center mt-2">
-                Don't have an account yet? <Link to='/signup'>Sign Up</Link>
+            <div className="text-center mt-2">
+                Don't have an account yet?<Link to='/signup'>Sign Up</Link>
             </div>
         </div>
     )

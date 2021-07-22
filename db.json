@@ -6,7 +6,7 @@
       "entries": [
         {
           "id": 1,
-          "label": "capannone 1",
+          "label": "Capannone 1",
           "results": [
             {
               "id": 1,
@@ -36,7 +36,7 @@
         },
         {
           "id": 2,
-          "label": "capannone 2",
+          "label": "Capannone 2",
           "results": [
             {
               "id": 1,
@@ -66,7 +66,7 @@
         },
         {
           "id": 3,
-          "label": "capannone 3",
+          "label": "Capannone 3",
           "results": [
             {
               "id": 1,
