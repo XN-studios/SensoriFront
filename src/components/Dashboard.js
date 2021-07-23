@@ -6,6 +6,7 @@ import LineChart from './LineChart'
 import { Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import ChartHeader from './ChartHeader'
 
 export default function Dashboard() {
 
@@ -62,27 +63,27 @@ export default function Dashboard() {
     const title = data.entries[id-1].label
     setEntryTitle(title)
 
-    const times = [data.entries[id-1].results[0].time,
-                    data.entries[id-1].results[1].time,
-                    data.entries[id-1].results[2].time]
+    const times = data.entries[id-1].results.map(function(elem) {
+      return elem.time
+    })
     setTimes(times)
     // console.log(times)
 
-    const oxy = [data.entries[id-1].results[0].oxygen,
-                    data.entries[id-1].results[1].oxygen,
-                    data.entries[id-1].results[2].oxygen]
+    const oxy = data.entries[id-1].results.map(function(elem) {
+      return elem.oxygen
+    })
     setOxy(oxy)
     // console.log(oxy)
 
-    const co2 = [data.entries[id-1].results[0].CO2,
-                    data.entries[id-1].results[1].CO2,
-                    data.entries[id-1].results[2].CO2]
+    const co2 = data.entries[id-1].results.map(function(elem) {
+      return elem.CO2
+    })
     setCo2(co2)
     // console.log(co2)
 
-    const temp = [data.entries[id-1].results[0].temperature,
-                    data.entries[id-1].results[1].temperature,
-                    data.entries[id-1].results[2].temperature]
+    const temp = data.entries[id-1].results.map(function(elem) {
+      return elem.temperature
+    })
     setTemp(temp)
     // console.log(temp)
   }
@@ -104,17 +105,14 @@ export default function Dashboard() {
           </>
           : 'No entries to show.')
           : <div>
-          <Button text="Back to all entries" onClick={() => setShowEntries(!showEntries)} buttonStyle={{float: 'right', backgroundColor: 'rgb(64, 168, 50)'}}/>
-          <br></br>
-          <br></br>
-          <div>
-            <h2>{entryTitle}</h2>
-            <br></br>
-            <LineChart times = {times} oxy = {oxy} 
-            co2 = {co2} temp = {temp} />
-          </div>
+          <ChartHeader title = {entryTitle} onClick = {() => setShowEntries(!showEntries)} />
+          <LineChart times = {times} oxy = {oxy} 
+          co2 = {co2} temp = {temp} />
         </div> }
       <div className="text-center mt-2">
+        <br></br>
+        <br></br>
+        <br></br>
         <Button text="Log Out" variant="link" onClick={handleLogout} buttonStyle={{backgroundColor: 'rgb(64, 168, 50)'}}/>
       </div>
     </div>

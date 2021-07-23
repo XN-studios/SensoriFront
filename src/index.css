@@ -112,3 +112,29 @@ footer {
   margin-top: 30px;
   text-align: center;
 } 
+
+/* DASHBOARD */
+.container {
+  max-width: 90vw !important ;
+}
+
+/* CHART PAGE */
+.chart {
+  padding-top: 15px;
+  display: flex;
+}
+
+canvas {
+  max-width: 650px;
+  max-height: 550px;
+}
+
+.chart-settings {
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  min-width: 300px;
+  border: 1px solid rgb(80, 255, 80);
+  padding: 30px;
+  border-radius: 5px;
+}

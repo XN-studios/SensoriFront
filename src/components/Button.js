@@ -9,9 +9,4 @@ const Button = ({ text, onClick, buttonStyle }) => {
     )
 }
 
-// const buttonStyle = {
-//     float: 'right',
-//     backgroundColor: 'steelblue'
-// }
-
 export default Button
