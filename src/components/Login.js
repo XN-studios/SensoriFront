@@ -12,7 +12,7 @@ export default function Login() {
     const history = useHistory()
 
     async function handleSubmit(e) {
-        e.preventDefault()
+        e.preventDefault();
 
         try {
             setError("")
@@ -23,7 +23,9 @@ export default function Login() {
             setError('Failed to log in')
         }
         
-        setLoading(false)
+        return () => {
+            setLoading(false);
+        }
 
     }
 
@@ -42,6 +44,7 @@ export default function Login() {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" ref={passwordRef} required />
                         </Form.Group>
+                        <br></br>
                         <Button disabled={loading} className="w-100" type="submit">Log In</Button>
                     </Form>
                     <div className="text-center mt-2">

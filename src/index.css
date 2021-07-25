@@ -1,13 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 * {
   box-sizing: border-box;
-  margin: 15px;
+  margin: 1.2vw;
   padding: 0;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
 }
 
 .log-in {
@@ -15,7 +10,7 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 1px solid;
   padding: 30px;
   border-radius: 5px;
 }
@@ -122,19 +117,35 @@ footer {
 .chart {
   padding-top: 15px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 canvas {
+  min-height: 200px ;
   max-width: 650px;
   max-height: 550px;
+  flex: 1 1 200px;
 }
 
 .chart-settings {
-  margin: 30px auto;
+  flex: 1 1 200px;
+  max-width: 300px;
+  margin: 30px;
   overflow: auto;
   min-height: 300px;
-  min-width: 300px;
   border: 1px solid rgb(80, 255, 80);
-  padding: 30px;
+  padding: 20px;
   border-radius: 5px;
+}
+
+.show-all {
+  color: grey;
+  padding-left: 0;
+  background-color: transparent;
+  border-style: hidden;
+}
+
+.show-all:hover {
+  text-decoration: underline;
 }

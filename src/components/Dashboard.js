@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react'
 import React from 'react'
 import Button from './Button'
 import Entries from './Entries'
-import LineChart from './LineChart'
 import { Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
-import ChartHeader from './ChartHeader'
+import ChartPage from './ChartPage'
 
 export default function Dashboard() {
 
@@ -29,12 +28,14 @@ export default function Dashboard() {
   const [entries, setEntries] = useState([])
   const [entryTitle, setEntryTitle] = useState()
   const [times, setTimes] = useState([])
+  const [dates, setDates] = useState([])
   const [oxy, setOxy] = useState([])
   const [co2, setCo2] = useState([])
   const [temp, setTemp] = useState([])
 
 
   useEffect(() => {
+    
     const getEntries = async () => {
       const entriesFromServer = await fetchEntries()
       setEntries(entriesFromServer)
@@ -62,6 +63,12 @@ export default function Dashboard() {
 
     const title = data.entries[id-1].label
     setEntryTitle(title)
+
+    const dates = data.entries[id-1].results.map(function(elem) {
+      return elem.date
+    })
+    setDates(dates)
+    // console.log(dates)
 
     const times = data.entries[id-1].results.map(function(elem) {
       return elem.time
@@ -91,24 +98,26 @@ export default function Dashboard() {
   return (
     <div className="container">
       {showEntries ?
-        (entries.length > 0 ?
-          <>
-            <Card>
-              <Card.Body>
-                {error && <Alert variant='danger'> {error} </Alert>}
-                <strong>Email: {currentUser.email}</strong>
-                <Link to='/update-profile' style={{ color: 'green', textDecoration: 'none' }}>Update Credentials</Link>
-              </Card.Body>
-            </Card>
-            <Entries entries={entries}
-            onClick={fetchEntry}/>
-          </>
-          : 'No entries to show.')
-          : <div>
-          <ChartHeader title = {entryTitle} onClick = {() => setShowEntries(!showEntries)} />
-          <LineChart times = {times} oxy = {oxy} 
-          co2 = {co2} temp = {temp} />
-        </div> }
+        <>
+          <Card>
+            <Card.Body>
+              {error && <Alert variant='danger'> {error} </Alert>}
+              <strong>Email: {currentUser.email}</strong>
+              <Link to='/update-profile' style={{ color: 'green', textDecoration: 'none' }}>Update Credentials</Link>
+            </Card.Body>
+          </Card>
+          {entries.length > 0 ?
+            <>
+              <Entries entries={entries}
+              onClick={fetchEntry}/>
+            </>
+            : 'No entries to show.'}
+        </>
+        : <>
+          <ChartPage title = {entryTitle} onClick = {() => setShowEntries(!showEntries)} 
+          dates = {dates} times = {times} oxy = {oxy} 
+          co2 = {co2} temp = {temp}/>
+        </> }
       <div className="text-center mt-2">
         <br></br>
         <br></br>
