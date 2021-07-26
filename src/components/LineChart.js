@@ -42,55 +42,58 @@ const LineChart = ({ dates, times, oxy, co2, temp }) => {
     }
 
     return (
-        <div className="chart">
-            <Line 
-                data= {{
-                    labels: times.slice(firstVal, lastVal),
-                    datasets: [
-                        {
-                            label: "Oxygen",
-                            data: oxy.slice(firstVal, lastVal),
-                            backgroundColor: 'blue',
-                            bordercolor: 'black',
-                            borderWidth: 2,
-                        },
-                        {
-                            label: "CO₂",
-                            data: co2.slice(firstVal, lastVal),
-                            backgroundColor: 'black',
-                            bordercolor: 'black',
-                            borderWidth: 2,
-                        },
-                        {
-                            label: "Temperature",
-                            data: temp.slice(firstVal, lastVal),
-                            backgroundColor: 'red',
-                            bordercolor: 'black',
-                            borderWidth: 2,
-                        },
-                        
-                    ]
-                }}
-                height={400}
-                width={500}
-                options={{
-                    maintainAspectRatio: true,
-                    scales: {
-                        yAxes: [
+        <>
+            <div className="canvas-container">
+                <Line 
+                    data= {{
+                        labels: times.slice(firstVal, lastVal),
+                        datasets: [
                             {
-                                ticks: {
-                                    beginAtZero: false,
-                                },
-                            }
+                                label: "Oxygen",
+                                data: oxy.slice(firstVal, lastVal),
+                                backgroundColor: 'blue',
+                                bordercolor: 'black',
+                                borderWidth: 2,
+                            },
+                            {
+                                label: "CO₂",
+                                data: co2.slice(firstVal, lastVal),
+                                backgroundColor: 'black',
+                                bordercolor: 'black',
+                                borderWidth: 2,
+                            },
+                            {
+                                label: "Temperature",
+                                data: temp.slice(firstVal, lastVal),
+                                backgroundColor: 'red',
+                                bordercolor: 'black',
+                                borderWidth: 2,
+                            },
+                            
                         ]
-                    },
-                    legend: {
-                        labels: {
-                        fontSize: 50,
+                    }}
+                    height={400}
+                    width={500}
+                    options={{
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            yAxes: [
+                                {
+                                    ticks: {
+                                        beginAtZero: false,
+                                    },
+                                }
+                            ]
                         },
-                    },
-                }}
-            />
+                        legend: {
+                            labels: {
+                            fontSize: 50,
+                            },
+                        },
+                    }}
+                />
+            </div>
             <div className="chart-settings">
                 <Form >
                     {/* {error && <Alert variant="danger">{error}</Alert>} */}
@@ -109,7 +112,7 @@ const LineChart = ({ dates, times, oxy, co2, temp }) => {
                     <Button text="Render" onClick={setBoundaries} buttonStyle={{backgroundColor: 'rgb(64, 168, 50)', float: "right"}} />
                 </Form>
             </div>
-        </div>
+        </>
     )
 }
 
