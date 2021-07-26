@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import React from 'react'
 import Button from './Button'
 import Entries from './Entries'
-import LineChart from './LineChart'
 import { Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import ChartPage from './ChartPage'
 
 export default function Dashboard() {
 
@@ -26,13 +26,16 @@ export default function Dashboard() {
 
   const [showEntries, setShowEntries] = useState(true)
   const [entries, setEntries] = useState([])
+  const [entryTitle, setEntryTitle] = useState()
   const [times, setTimes] = useState([])
+  const [dates, setDates] = useState([])
   const [oxy, setOxy] = useState([])
   const [co2, setCo2] = useState([])
   const [temp, setTemp] = useState([])
 
 
   useEffect(() => {
+    
     const getEntries = async () => {
       const entriesFromServer = await fetchEntries()
       setEntries(entriesFromServer)
@@ -58,59 +61,69 @@ export default function Dashboard() {
     const res = await fetch(`http://localhost:4000/users/1`)
     const data = await res.json()
 
-    const times = [data.entries[id-1].results[0].time,
-                    data.entries[id-1].results[1].time,
-                    data.entries[id-1].results[2].time]
+    const title = data.entries[id-1].label
+    setEntryTitle(title)
+
+    const dates = data.entries[id-1].results.map(function(elem) {
+      return elem.date
+    })
+    setDates(dates)
+    // console.log(dates)
+
+    const times = data.entries[id-1].results.map(function(elem) {
+      return elem.time
+    })
     setTimes(times)
     // console.log(times)
-    const oxy = [data.entries[id-1].results[0].oxygen,
-                    data.entries[id-1].results[1].oxygen,
-                    data.entries[id-1].results[2].oxygen]
+
+    const oxy = data.entries[id-1].results.map(function(elem) {
+      return elem.oxygen
+    })
     setOxy(oxy)
     // console.log(oxy)
-    const co2 = [data.entries[id-1].results[0].CO2,
-                    data.entries[id-1].results[1].CO2,
-                    data.entries[id-1].results[2].CO2]
+
+    const co2 = data.entries[id-1].results.map(function(elem) {
+      return elem.CO2
+    })
     setCo2(co2)
     // console.log(co2)
-    const temp = [data.entries[id-1].results[0].temperature,
-                    data.entries[id-1].results[1].temperature,
-                    data.entries[id-1].results[2].temperature]
+
+    const temp = data.entries[id-1].results.map(function(elem) {
+      return elem.temperature
+    })
     setTemp(temp)
     // console.log(temp)
   }
 
   return (
-    <div>
-        <Card>
+    <div className="container">
+      {showEntries ?
+        <>
+          <Card>
             <Card.Body>
-                <h2> Dashboard</h2>
-                {error && <Alert variant='danger'> {error} </Alert>}
-                <strong>Email: {currentUser.email}</strong>
-                <Link to='/update-profile' className="btn btn-primary w-100 mt-3">Update Profile</Link>
+              {error && <Alert variant='danger'> {error} </Alert>}
+              <strong>Email: {currentUser.email}</strong>
+              <Link to='/update-profile' style={{ color: 'green', textDecoration: 'none' }}>Update Credentials</Link>
             </Card.Body>
-        </Card>
-        {showEntries ?
-          (entries.length > 0 ?
-            <Entries entries={entries}
-            onClick={fetchEntry}/>
-            : 'No entries to show.')
-            : <div>
-            <Button text="Back to all entries" onClick={() => setShowEntries(!showEntries)} />
-            <br></br>
-            <br></br>
-            <div>
-              {JSON.stringify(times)}<br></br>
-              {JSON.stringify(oxy)}<br></br>
-              {JSON.stringify(co2)}<br></br>
-              {JSON.stringify(temp)}<br></br>
-              <LineChart times = {times} oxy = {oxy} 
-              co2 = {co2} temp = {temp} />
-            </div>
-          </div> }
-        <div className="w-100 text-center mt-2">
-          <Button text="Log Out" variant="link" onClick={handleLogout} />
-        </div>
+          </Card>
+          {entries.length > 0 ?
+            <>
+              <Entries entries={entries}
+              onClick={fetchEntry}/>
+            </>
+            : 'No entries to show.'}
+        </>
+        : <>
+          <ChartPage title = {entryTitle} onClick = {() => setShowEntries(!showEntries)} 
+          dates = {dates} times = {times} oxy = {oxy} 
+          co2 = {co2} temp = {temp}/>
+        </> }
+      <div className="text-center mt-2">
+        <br></br>
+        <br></br>
+        <br></br>
+        <Button text="Log Out" variant="link" onClick={handleLogout} buttonStyle={{backgroundColor: 'rgb(64, 168, 50)'}}/>
+      </div>
     </div>
   )
 }

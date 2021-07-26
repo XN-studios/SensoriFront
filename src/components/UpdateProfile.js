@@ -44,7 +44,7 @@ export default function UpdateProfile() {
 
     return (
         <div>
-            <Card>
+            <Card className="log-in">
                 <Card.Body>
                     <h2 className="text-center mb-4">Update Profile</h2>
                     <Form onSubmit={handleSubmit}>
@@ -64,11 +64,12 @@ export default function UpdateProfile() {
                             <Form.Control type="password" ref={passwordConfirmRef}
                             placeholder="Leave blank to keep the same"/>
                         </Form.Group>
+                        <br></br>
                         <Button disabled={loading} className="w-100" type="submit">Update Profile</Button>
                     </Form>
                 </Card.Body>
             </Card>
-            <div className="w-100 text-center mt-2">
+            <div className="text-center mt-2">
                 <Link to='/'>Cancel</Link>
             </div>
         </div>

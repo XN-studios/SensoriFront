@@ -6,7 +6,7 @@
       "entries": [
         {
           "id": 1,
-          "label": "capannone 1",
+          "label": "Capannone 1",
           "results": [
             {
               "id": 1,
@@ -31,12 +31,36 @@
               "temperature": 34,
               "date": "Lug 2nd",
               "time": "16:30"
+            },
+            {
+              "id": 4,
+              "oxygen": 134,
+              "CO2": 70,
+              "temperature": 35,
+              "date": "Lug 2nd",
+              "time": "17:00"
+            },
+            {
+              "id": 5,
+              "oxygen": 134,
+              "CO2": 72,
+              "temperature": 35,
+              "date": "Lug 2nd",
+              "time": "17:30"
+            },
+            {
+              "id": 6,
+              "oxygen": 131,
+              "CO2": 78,
+              "temperature": 36,
+              "date": "Lug 2nd",
+              "time": "18:00"
             }
           ]
         },
         {
           "id": 2,
-          "label": "capannone 2",
+          "label": "Capannone 2",
           "results": [
             {
               "id": 1,
@@ -61,12 +85,36 @@
               "temperature": 34,
               "date": "Lug 2nd",
               "time": "16:30"
+            },
+            {
+              "id": 4,
+              "oxygen": 124,
+              "CO2": 88,
+              "temperature": 35,
+              "date": "Lug 2nd",
+              "time": "17:00"
+            },
+            {
+              "id": 5,
+              "oxygen": 127,
+              "CO2": 87,
+              "temperature": 34,
+              "date": "Lug 2nd",
+              "time": "17:30"
+            },
+            {
+              "id": 6,
+              "oxygen": 125,
+              "CO2": 88,
+              "temperature": 33,
+              "date": "Lug 2nd",
+              "time": "18:00"
             }
           ]
         },
         {
           "id": 3,
-          "label": "capannone 3",
+          "label": "Capannone 3",
           "results": [
             {
               "id": 1,
@@ -87,10 +135,34 @@
             {
               "id": 3,
               "oxygen": 132,
-              "CO2": 80,
+              "CO2": 73,
               "temperature": 34,
               "date": "Lug 2nd",
               "time": "16:30"
+            },
+            {
+              "id": 4,
+              "oxygen": 134,
+              "CO2": 72,
+              "temperature": 35,
+              "date": "Lug 2nd",
+              "time": "17:00"
+            },
+            {
+              "id": 5,
+              "oxygen": 132,
+              "CO2": 74,
+              "temperature": 32,
+              "date": "Lug 2nd",
+              "time": "17:30"
+            },
+            {
+              "id": 6,
+              "oxygen": 130,
+              "CO2": 75,
+              "temperature": 33,
+              "date": "Lug 2nd",
+              "time": "18:00"
             }
           ]
         } 
