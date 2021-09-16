@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react'
 import React from 'react'
 import Button from './Button'
 import Entries from './Entries'
-import { Card, Alert } from 'react-bootstrap'
+import { Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import ChartPage from './ChartPage'
+import database from '../db'
 
 export default function Dashboard() {
 
   const { currentUser, logout } = useAuth()
   const [error, setError] = useState('')
   const history = useHistory()
+  
+  console.log(currentUser.uid)
 
   async function handleLogout() {
     setError('')
@@ -27,11 +30,16 @@ export default function Dashboard() {
   const [showEntries, setShowEntries] = useState(true)
   const [entries, setEntries] = useState([])
   const [entryTitle, setEntryTitle] = useState()
-  const [times, setTimes] = useState([])
-  const [dates, setDates] = useState([])
-  const [oxy, setOxy] = useState([])
-  const [co2, setCo2] = useState([])
-  const [temp, setTemp] = useState([])
+  const [val1, setVal1] = useState([])
+  const [val2, setVal2] = useState([])
+  const [val3, setVal3] = useState([])
+  const [val4, setVal4] = useState([])
+  const [val5, setVal5] = useState([])
+  const [val6, setVal6] = useState([])
+  const [val7, setVal7] = useState([])
+  const [val8, setVal8] = useState([])
+  const [val9, setVal9] = useState([])
+  const [val10, setVal10] = useState([])
 
 
   useEffect(() => {
@@ -47,9 +55,17 @@ export default function Dashboard() {
 
   // Fetch Entries for One User
   const fetchEntries = async () => {
-    const res = await fetch('http://localhost:4000/users/1')
-    const data = await res.json()
-    return data.entries
+
+    const getUserFromUid = function (array, key, value) {
+      const filtered = array.filter(function (object) {
+        return object[key] === value
+      })
+      return filtered[0]
+    }
+  
+    const userData = getUserFromUid(database.users, "uid", currentUser.uid)
+
+    return userData.entries
   }
 
 
@@ -58,54 +74,58 @@ export default function Dashboard() {
 
     setShowEntries(!showEntries)
 
-    const res = await fetch(`http://localhost:4000/users/1`)
-    const data = await res.json()
+    const data = database.users[0]
 
     const title = data.entries[id-1].label
     setEntryTitle(title)
 
-    const dates = data.entries[id-1].results.map(function(elem) {
+    const val1 = data.entries[id-1].results.map(function(elem) {
       return elem.date
     })
-    setDates(dates)
-    // console.log(dates)
+    setVal1(val1)
 
-    const times = data.entries[id-1].results.map(function(elem) {
+    const val2 = data.entries[id-1].results.map(function(elem) {
       return elem.time
     })
-    setTimes(times)
-    // console.log(times)
+    setVal2(val2)
 
-    const oxy = data.entries[id-1].results.map(function(elem) {
-      return elem.oxygen
+    const val3 = data.entries[id-1].results.map(function(elem) {
+      return elem.CF_LINE_1
     })
-    setOxy(oxy)
-    // console.log(oxy)
+    setVal3(val3)
 
-    const co2 = data.entries[id-1].results.map(function(elem) {
-      return elem.CO2
+    const val4 = data.entries[id-1].results.map(function(elem) {
+      return elem.THI_1
     })
-    setCo2(co2)
-    // console.log(co2)
+    setVal4(val4)
 
-    const temp = data.entries[id-1].results.map(function(elem) {
-      return elem.temperature
+    const val5 = data.entries[id-1].results.map(function(elem) {
+      return elem.CF_LINE_2
     })
-    setTemp(temp)
-    // console.log(temp)
+    setVal5(val5)
+
+    const val6 = data.entries[id-1].results.map(function(elem) {
+      return elem.THI_2
+    })
+    setVal6(val6)
+
+    const val7 = data.entries[id-1].results.map(function(elem) {
+      return elem.RH
+    })
+    setVal7(val7)
+
+    const val8 = data.entries[id-1].results.map(function(elem) {
+      return elem.RH
+    })
+    setVal8(val8)
+
   }
 
   return (
     <div className="container">
       {showEntries ?
         <>
-          <Card>
-            <Card.Body>
-              {error && <Alert variant='danger'> {error} </Alert>}
-              <strong>Email: {currentUser.email}</strong>
-              <Link to='/update-profile' style={{ color: 'green', textDecoration: 'none' }}>Update Credentials</Link>
-            </Card.Body>
-          </Card>
+          {error && <Alert variant='danger'> {error} </Alert>}
           {entries.length > 0 ?
             <>
               <Entries entries={entries}
@@ -115,8 +135,9 @@ export default function Dashboard() {
         </>
         : <>
           <ChartPage title = {entryTitle} onClick = {() => setShowEntries(!showEntries)} 
-          dates = {dates} times = {times} oxy = {oxy} 
-          co2 = {co2} temp = {temp}/>
+          val1 = {val1} val2 = {val2} val3 = {val3} val4 = {val4} 
+          val5 = {val5} val6 = {val6} val7 = {val7} val8 = {val8} 
+          val9 = {val9} val10 = {val10} />
         </> }
       <div className="text-center mt-2">
         <br></br>

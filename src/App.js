@@ -16,9 +16,9 @@ function App() {
   return (
     <AuthProvider>
       <div>
-        <Header />
         <div className="w-100">
           <Router>
+            <Header />
             <Switch>
               <Route path="/signup" component={SignUp} />
               <PrivateRoute path="/" exact component={Dashboard}/>

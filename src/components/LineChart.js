@@ -5,7 +5,7 @@ import Button from './Button'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
 
-const LineChart = ({ dates, times, oxy, co2, temp }) => {
+const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10}) => {
 
     const firstValRef = useRef()
     const lastValRef = useRef()
@@ -17,13 +17,13 @@ const LineChart = ({ dates, times, oxy, co2, temp }) => {
         e.stopPropagation();
 
         let firstIndex = 0;
-        let lastIndex = times.length;
+        let lastIndex = val2.length;
 
         if (firstValRef.current.value !== "") {
-            firstIndex = times.indexOf(firstValRef.current.value);
+            firstIndex = val2.indexOf(firstValRef.current.value);
         }
         if (lastValRef.current.value !== "") {
-            lastIndex = times.indexOf(lastValRef.current.value) + 1;
+            lastIndex = val2.indexOf(lastValRef.current.value) + 1;
         }
 
         setFirstVal(firstIndex)
@@ -38,7 +38,7 @@ const LineChart = ({ dates, times, oxy, co2, temp }) => {
         lastValRef.current.value = '';
 
         setFirstVal(0)
-        setLastVal(times.length)
+        setLastVal(val2.length)
     }
 
     return (
@@ -46,30 +46,43 @@ const LineChart = ({ dates, times, oxy, co2, temp }) => {
             <div className="canvas-container">
                 <Line 
                     data= {{
-                        labels: times.slice(firstVal, lastVal),
+                        labels: val2.slice(firstVal, lastVal),
                         datasets: [
                             {
-                                label: "Oxygen",
-                                data: oxy.slice(firstVal, lastVal),
+                                label: "Temperature 1",
+                                data: val3.slice(firstVal, lastVal),
                                 backgroundColor: 'blue',
                                 bordercolor: 'black',
                                 borderWidth: 2,
                             },
                             {
-                                label: "CO₂",
-                                data: co2.slice(firstVal, lastVal),
+                                label: "T.H.I. 1",
+                                data: val4.slice(firstVal, lastVal),
                                 backgroundColor: 'black',
                                 bordercolor: 'black',
                                 borderWidth: 2,
                             },
                             {
-                                label: "Temperature",
-                                data: temp.slice(firstVal, lastVal),
+                                label: "Temperature 2",
+                                data: val5.slice(firstVal, lastVal),
                                 backgroundColor: 'red',
                                 bordercolor: 'black',
                                 borderWidth: 2,
                             },
-                            
+                            {
+                                label: "T.H.I. 2",
+                                data: val6.slice(firstVal, lastVal),
+                                backgroundColor: 'green',
+                                bordercolor: 'black',
+                                borderWidth: 2,
+                            },
+                            {
+                                label: "RH%",
+                                data: val7.slice(firstVal, lastVal),
+                                backgroundColor: 'green',
+                                bordercolor: 'black',
+                                borderWidth: 2,
+                            },
                         ]
                     }}
                     height={400}

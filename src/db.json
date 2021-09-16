@@ -1,0 +1,239 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "uid": "PPFmT0MvyyMKzIVkMsvInhL67fn2",
+      "entries": [
+        {
+          "id": 1,
+          "label": "Entrata 1",
+          "results": [
+            {
+              "id": 1,
+              "CF_LINE_1": 220,
+              "THI_1": 75,
+              "CF_LINE_2": 220,
+              "THI_2": 75,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "15:30"
+            },
+            {
+              "id": 2,
+              "CF_LINE_1": 224,
+              "THI_1": 70,
+              "CF_LINE_2": 224,
+              "THI_2": 70,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "16:00"
+            },
+            {
+              "id": 3,
+              "CF_LINE_1": 223,
+              "THI_1": 80,
+              "CF_LINE_2": 223,
+              "THI_2": 80,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "16:30"
+            },
+            {
+              "id": 4,
+              "CF_LINE_1": 231,
+              "THI_1": 70,
+              "CF_LINE_2": 231,
+              "THI_2": 70,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "17:00"
+            },
+            {
+              "id": 5,
+              "CF_LINE_1": 237,
+              "THI_1": 72,
+              "CF_LINE_2": 237,
+              "THI_2": 72,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "17:30"
+            },
+            {
+              "id": 6,
+              "CF_LINE_1": 233,
+              "THI_1": 78,
+              "CF_LINE_2": 233,
+              "THI_2": 78,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "18:00"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "label": "Entrata 2",
+          "results": [
+            {
+              "id": 1,
+              "CF_LINE_1": 220,
+              "THI_1": 75,
+              "CF_LINE_2": 220,
+              "THI_2": 75,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "15:30"
+            },
+            {
+              "id": 2,
+              "CF_LINE_1": 224,
+              "THI_1": 70,
+              "CF_LINE_2": 224,
+              "THI_2": 70,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "16:00"
+            },
+            {
+              "id": 3,
+              "CF_LINE_1": 223,
+              "THI_1": 80,
+              "CF_LINE_2": 223,
+              "THI_2": 80,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "16:30"
+            },
+            {
+              "id": 4,
+              "CF_LINE_1": 231,
+              "THI_1": 70,
+              "CF_LINE_2": 231,
+              "THI_2": 70,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "17:00"
+            },
+            {
+              "id": 5,
+              "CF_LINE_1": 237,
+              "THI_1": 72,
+              "CF_LINE_2": 237,
+              "THI_2": 72,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "17:30"
+            },
+            {
+              "id": 6,
+              "CF_LINE_1": 233,
+              "THI_1": 78,
+              "CF_LINE_2": 233,
+              "THI_2": 78,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "18:00"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "label": "Entrata 1",
+          "results": [
+            {
+              "id": 1,
+              "CF_LINE_1": 220,
+              "THI_1": 75,
+              "CF_LINE_2": 220,
+              "THI_2": 75,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "15:30"
+            },
+            {
+              "id": 2,
+              "CF_LINE_1": 224,
+              "THI_1": 70,
+              "CF_LINE_2": 224,
+              "THI_2": 70,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "16:00"
+            },
+            {
+              "id": 3,
+              "CF_LINE_1": 223,
+              "THI_1": 80,
+              "CF_LINE_2": 223,
+              "THI_2": 80,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "16:30"
+            },
+            {
+              "id": 4,
+              "CF_LINE_1": 231,
+              "THI_1": 70,
+              "CF_LINE_2": 231,
+              "THI_2": 70,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "17:00"
+            },
+            {
+              "id": 5,
+              "CF_LINE_1": 237,
+              "THI_1": 72,
+              "CF_LINE_2": 237,
+              "THI_2": 72,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "17:30"
+            },
+            {
+              "id": 6,
+              "CF_LINE_1": 233,
+              "THI_1": 78,
+              "CF_LINE_2": 233,
+              "THI_2": 78,
+              "WIND": 0,
+              "RH": 503,
+              "date": "02/07",
+              "time": "18:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "uid": "****",
+      "username": "Utente numero 2",
+      "entries": [
+        {
+          "id": 1,
+          "label": "Sondaggio",
+          "uomini": 56,
+          "donne": 92
+        }
+      ]
+    }
+  ]
+}
