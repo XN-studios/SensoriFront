@@ -111,14 +111,30 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                 <Form >
                     {/* {error && <Alert variant="danger">{error}</Alert>} */}
                     <h5>Display values</h5>
-                    <Form.Group id="first-value">
-                        <Form.Label>from:</Form.Label>
-                        <Form.Control type="text" ref={firstValRef} />
-                    </Form.Group>
-                    <Form.Group id="last-value">
-                        <Form.Label>to:</Form.Label>
-                        <Form.Control type="text" ref={lastValRef} />
-                    </Form.Group>
+                    <div>
+                        <label htmlFor="from">from:</label>
+                        <select ref={firstValRef} id="from" name="from">
+                            <option value=""></option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:30">20:30</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="to">to:</label>
+                        <select ref={lastValRef} id="to" name="to">
+                            <option value=""></option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:30">16:30</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:30">20:30</option>
+                        </select>
+                    </div>
                     <MdKeyboardArrowRight style={{ color: 'grey', marginRight: '0'}}/>
                     <button className="show-all" onClick={setDefault}>Show all</button>
                     <br></br>
