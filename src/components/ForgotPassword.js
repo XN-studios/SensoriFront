@@ -18,9 +18,9 @@ export default function ForgotPassword() {
             setMessage("")
             setLoading(true)
             await resetPassword(emailRef.current.value)
-            setMessage('Check your mailbox for further instructions')
+            setMessage('Controlla la tua mailbox per ulteriori istruzioni')
         } catch(error) {
-            setError('Failed to send email')
+            setError('Invio della mail fallito.')
         }
         
         setLoading(false)
@@ -40,15 +40,15 @@ export default function ForgotPassword() {
                             <Form.Control type="email" ref={emailRef} required />
                         </Form.Group>
                         <br></br>
-                        <Button disabled={loading} className="w-100" type="submit">Send Link</Button>
+                        <Button disabled={loading} className="w-100" type="submit">Invia Link</Button>
                     </Form>
                     <div className="text-center mt-2">
-                        <Link to="/login">Go to login</Link>
+                        <Link to="/login">Torna al login</Link>
                     </div>
                 </Card.Body>
             </Card>
             <div className="text-center mt-2">
-                Don't have an account yet?<Link to='/signup'>Sign Up</Link>
+                Non hai ancora un account?<Link to='/signup'>Creane uno</Link>
             </div>
         </div>
     )

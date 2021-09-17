@@ -68,7 +68,7 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                         labels: labels,
                         datasets: [
                             {
-                                label: "Temperature 1",
+                                label: "Temperatura 1",
                                 data: val3.slice(firstVal, lastVal),
                                 backgroundColor: 'blue',
                                 borderColor: 'rgb(2, 0, 99)',
@@ -82,7 +82,7 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                                 borderWidth: 1,
                             },
                             {
-                                label: "Temperature 2",
+                                label: "Temperatura 2",
                                 data: val5.slice(firstVal, lastVal),
                                 backgroundColor: 'red',
                                 borderColor: 'rgb(99, 0, 0)',
@@ -141,6 +141,7 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                             <option value="06 Lug">06 Lug</option>
                             <option value="07 Lug">07 Lug</option>
                         </select>
+                        <br></br>
                         <label htmlFor="day-to">al giorno:</label>
                         <select className="sel-form" ref={lastDayRef} id="day-to" name="day-to">
                             <option value=""></option>
@@ -151,8 +152,7 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                             <option value="06 Lug">06 Lug</option>
                             <option value="07 Lug">07 Lug</option>
                         </select>
-                    </div>
-                    <div>
+                        <br></br>
                         <label htmlFor="time-from">Dalle ore:</label>
                         <select className="sel-form" ref={firstTimRef} id="time-from" name="time-from">
                             <option value=""></option>
@@ -163,6 +163,7 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                             <option value="19:30">19:30</option>
                             <option value="20:30">20:30</option>
                         </select>
+                        <br></br>
                         <label htmlFor="time-to">alle ore:</label>
                         <select className="sel-form" ref={lastTimRef} id="time-to" name="time-to">
                             <option value=""></option>
@@ -173,9 +174,10 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                             <option value="19:30">19:30</option>
                             <option value="20:30">20:30</option>
                         </select>
+                        <br></br>
                     </div>
                     <MdKeyboardArrowRight style={{ color: 'grey', marginRight: '0'}}/>
-                    <button className="show-all" onClick={setDefault}>Show all</button>
+                    <button className="show-all" onClick={setDefault}>Mostra tutti</button>
                     <br></br>
                     <Button text="Render" onClick={setBoundaries} buttonStyle={{backgroundColor: 'rgb(64, 168, 50)', float: "right"}} />
                 </Form>

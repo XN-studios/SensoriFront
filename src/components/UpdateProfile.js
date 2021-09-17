@@ -18,7 +18,7 @@ export default function UpdateProfile() {
         e.preventDefault()
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            return setError('The two passwords you typed in don\'t match')
+            return setError('Le due password non corrispondono.')
         }
 
         const promises = []
@@ -35,7 +35,7 @@ export default function UpdateProfile() {
         Promise.all(promises).then(() => {
             history.push('/')
         }).catch(() => {
-            setError('Failed to update account')
+            setError('Modifica dell\'account fallita.')
         }).finally(() => {
             setLoading(false)
         })
@@ -60,7 +60,7 @@ export default function UpdateProfile() {
                             placeholder="Leave blank to keep the same"/>
                         </Form.Group>
                         <Form.Group id="password-confirm">
-                            <Form.Label>Password Confirmation</Form.Label>
+                            <Form.Label>Conferma password</Form.Label>
                             <Form.Control type="password" ref={passwordConfirmRef}
                             placeholder="Leave blank to keep the same"/>
                         </Form.Group>
@@ -70,7 +70,7 @@ export default function UpdateProfile() {
                 </Card.Body>
             </Card>
             <div className="text-center mt-2">
-                <Link to='/'>Cancel</Link>
+                <Link to='/'>Annulla</Link>
             </div>
         </div>
     )

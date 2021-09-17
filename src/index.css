@@ -134,7 +134,7 @@ footer {
   flex: 0.5 0.2 10vw;
   width: 20vw;
   height: fit-content;
-  min-width: 200px;
+  min-width: 230px;
   max-width: 300px;
   margin: 30px;
   border: 1px solid rgb(80, 255, 80);
@@ -155,4 +155,8 @@ footer {
 
 .session-head {
   border-radius: 30px !important;
+}
+
+.sel-form {
+  position:static;
 }

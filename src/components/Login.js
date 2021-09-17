@@ -20,7 +20,7 @@ export default function Login() {
             await login(emailRef.current.value, passwordRef.current.value)
             history.push('/')
         } catch(error) {
-            setError('Failed to log in')
+            setError('Log in fallito.')
         }
         
         return () => {
@@ -48,12 +48,12 @@ export default function Login() {
                         <Button disabled={loading} className="w-100" type="submit">Log In</Button>
                     </Form>
                     <div className="text-center mt-2">
-                        <Link to="/forgot-password">Forgot Password?</Link>
+                        <Link to="/forgot-password">Password dimenticata?</Link>
                     </div>
                 </Card.Body>
             </Card>
             <div className="text-center mt-2">
-                Don't have an account yet?<Link to='/signup'>Sign Up</Link>
+                Non hai ancora un account?<Link to='/signup'>Creane uno</Link>
             </div>
         </div>
     )

@@ -13,7 +13,7 @@ const Header = () => {
                 <div className='session-head'>
                     {/* {error && <Alert variant='danger'> {error} </Alert>} */}
                     {/* <strong>Email: {currentUser.email}</strong> */}
-                    <Link to='/update-profile' style={{ color: 'green', textDecoration: 'none' }}>Update Credentials</Link>
+                    <Link to='/update-profile' style={{ color: 'green', textDecoration: 'none' }}>Modifica credenziali</Link>
                 </div> :
                 <></>
             }
