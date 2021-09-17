@@ -7,8 +7,10 @@ import { MdKeyboardArrowRight } from 'react-icons/md'
 
 const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10}) => {
 
-    const firstValRef = useRef()
-    const lastValRef = useRef()
+    const firstDayRef = useRef()
+    const lastDayRef = useRef()
+    const firstTimRef = useRef()
+    const lastTimRef = useRef()
     const [firstVal, setFirstVal] = useState()
     const [lastVal, setLastVal] = useState()
 
@@ -17,25 +19,33 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
         e.stopPropagation();
 
         let firstIndex = 0;
-        let lastIndex = val2.length;
+        let lastIndex = val1.length;
 
-        if (firstValRef.current.value !== "") {
-            firstIndex = val2.indexOf(firstValRef.current.value);
+        if (firstDayRef.current.value !== "") {
+            firstIndex = val1.indexOf(firstDayRef.current.value);
         }
-        if (lastValRef.current.value !== "") {
-            lastIndex = val2.indexOf(lastValRef.current.value) + 1;
+        if (lastDayRef.current.value !== "") {
+            lastIndex = val1.lastIndexOf(lastDayRef.current.value) + 1;
         }
-
+        if (firstTimRef.current.value !== "") {
+            firstIndex += val2.slice(firstIndex, lastIndex).indexOf(firstTimRef.current.value);
+        }
+        if (lastTimRef.current.value !== "") {
+            lastIndex = val2.slice(firstIndex, lastIndex).lastIndexOf(lastTimRef.current.value) + firstIndex + 1;
+        }
         setFirstVal(firstIndex)
         setLastVal(lastIndex)
+
     }
 
     function setDefault(e) {
         e.preventDefault();
         e.stopPropagation();
 
-        firstValRef.current.value = '';
-        lastValRef.current.value = '';
+        firstDayRef.current.value = '';
+        lastDayRef.current.value = '';
+        firstTimRef.current.value = '';
+        lastTimRef.current.value = '';
 
         setFirstVal(0)
         setLastVal(val2.length)
@@ -113,10 +123,34 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
             <div className="chart-settings">
                 <Form >
                     {/* {error && <Alert variant="danger">{error}</Alert>} */}
-                    <h5>Display values</h5>
+                    <h5>Selezione periodo</h5>
                     <div>
-                        <label htmlFor="from">from:</label>
-                        <select ref={firstValRef} id="from" name="from">
+                        <label htmlFor="day-from">Dal giorno:</label>
+                        <select ref={firstDayRef} id="day-from" name="day-from">
+                            <option value=""></option>
+                            <option value="02 Lug">02 Lug</option>
+                            <option value="03 Lug">03 Lug</option>
+                            <option value="04 Lug">04 Lug</option>
+                            <option value="05 Lug">05 Lug</option>
+                            <option value="06 Lug">06 Lug</option>
+                            <option value="07 Lug">07 Lug</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="day-to">al giorno:</label>
+                        <select ref={lastDayRef} id="day-to" name="day-to">
+                            <option value=""></option>
+                            <option value="02 Lug">02 Lug</option>
+                            <option value="03 Lug">03 Lug</option>
+                            <option value="04 Lug">04 Lug</option>
+                            <option value="05 Lug">05 Lug</option>
+                            <option value="06 Lug">06 Lug</option>
+                            <option value="07 Lug">07 Lug</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="time-from">Dalle ore:</label>
+                        <select ref={firstTimRef} id="time-from" name="time-from">
                             <option value=""></option>
                             <option value="15:30">15:30</option>
                             <option value="16:30">16:30</option>
@@ -127,8 +161,8 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                         </select>
                     </div>
                     <div>
-                        <label htmlFor="to">to:</label>
-                        <select ref={lastValRef} id="to" name="to">
+                        <label htmlFor="time-to">alle ore:</label>
+                        <select ref={lastTimRef} id="time-to" name="time-to">
                             <option value=""></option>
                             <option value="15:30">15:30</option>
                             <option value="16:30">16:30</option>
