@@ -1,6 +1,6 @@
 import { React, useState, useRef } from 'react'
 import { Line } from 'react-chartjs-2'
-import { Form } from 'react-bootstrap'
+import { Form, Alert } from 'react-bootstrap'
 import Button from './Button'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
@@ -13,6 +13,7 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
     const lastTimRef = useRef()
     const [firstVal, setFirstVal] = useState()
     const [lastVal, setLastVal] = useState()
+    const [error, setError] = useState('')
 
     function setBoundaries(e) {
         e.preventDefault();
@@ -33,8 +34,13 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
         if (lastTimRef.current.value !== "") {
             lastIndex = val2.slice(firstIndex, lastIndex).lastIndexOf(lastTimRef.current.value) + firstIndex + 1;
         }
-        setFirstVal(firstIndex)
-        setLastVal(lastIndex)
+
+        try {
+            setFirstVal(firstIndex)
+            setLastVal(lastIndex)
+        } catch {
+            setError('C\'è stato un problema nei termini inseriti.')
+        }
 
     }
 
@@ -122,8 +128,8 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
             </div>
             <div className="chart-settings">
                 <Form >
-                    {/* {error && <Alert variant="danger">{error}</Alert>} */}
                     <h5>Selezione periodo</h5>
+                    {error && <Alert variant="danger">{error}</Alert>}
                     <div>
                         <label htmlFor="day-from">Dal giorno:</label>
                         <select ref={firstDayRef} id="day-from" name="day-from">
