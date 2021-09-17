@@ -41,12 +41,15 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
         setLastVal(val2.length)
     }
 
+    const zipper = (a1, a2) => a1.map((x, i) => x + ' ' + a2[i]);
+    const labels = zipper(val1.slice(firstVal, lastVal), val2.slice(firstVal, lastVal))
+
     return (
         <>
             <div className="canvas-container">
                 <Line 
                     data= {{
-                        labels: val2.slice(firstVal, lastVal),
+                        labels: labels,
                         datasets: [
                             {
                                 label: "Temperature 1",

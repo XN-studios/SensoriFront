@@ -10,7 +10,7 @@ import database from '../db'
 
 export default function Dashboard() {
 
-  const { currentUser, logout } = useAuth()
+  const { logout } = useAuth()
   const [error, setError] = useState('')
   const history = useHistory()
 
@@ -36,8 +36,8 @@ export default function Dashboard() {
   const [val6, setVal6] = useState([])
   const [val7, setVal7] = useState([])
   const [val8, setVal8] = useState([])
-  const [val9, setVal9] = useState([])
-  const [val10, setVal10] = useState([])
+  // const [val9, setVal9] = useState([])
+  // const [val10, setVal10] = useState([])
 
 
   useEffect(() => {
@@ -54,16 +54,20 @@ export default function Dashboard() {
   // Fetch Entries for One User
   const fetchEntries = async () => {
 
-    const getUserFromUid = function (array, key, value) {
-      const filtered = array.filter(function (object) {
-        return object[key] === value
-      })
-      return filtered[0]
-    }
+    // const getUserFromUid = function (array, key, value) {
+    //   const filtered = array.filter(function (object) {
+    //     return object[key] === value
+    //   })
+    //   return filtered[0]
+    // }
   
-    const userData = getUserFromUid(database.users, "uid", currentUser.uid)
+    // const userData = getUserFromUid(database.users, "uid", currentUser.uid)
+    
+    
+    // ^^^ Questo è il codice per seleczionare i contenuti di un account
 
-    return userData.entries
+
+    return database.users[0].entries
   }
 
 
@@ -135,7 +139,8 @@ export default function Dashboard() {
           <ChartPage title = {entryTitle} onClick = {() => setShowEntries(!showEntries)} 
           val1 = {val1} val2 = {val2} val3 = {val3} val4 = {val4} 
           val5 = {val5} val6 = {val6} val7 = {val7} val8 = {val8} 
-          val9 = {val9} val10 = {val10} />
+          // val9 = {val9} val10 = {val10} 
+          />
         </> }
       <div className="text-center mt-2">
         <br></br>
