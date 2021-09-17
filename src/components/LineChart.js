@@ -129,9 +129,10 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
             <div className="chart-settings">
                 <Form >
                     <h5>Selezione periodo</h5>
+                    <br></br>
                     {error && <Alert variant="danger">{error}</Alert>}
-                    <div>
-                        <label htmlFor="day-from">Dal giorno:</label>
+                    <div className="chart-settings-cont">
+                        <label className="sel-lab" htmlFor="day-from">Dal giorno:</label>
                         <select className="sel-form" ref={firstDayRef} id="day-from" name="day-from">
                             <option value=""></option>
                             <option value="02 Lug">02 Lug</option>
@@ -141,8 +142,7 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                             <option value="06 Lug">06 Lug</option>
                             <option value="07 Lug">07 Lug</option>
                         </select>
-                        <br></br>
-                        <label htmlFor="day-to">al giorno:</label>
+                        <label className="sel-lab" htmlFor="day-to">al giorno:</label>
                         <select className="sel-form" ref={lastDayRef} id="day-to" name="day-to">
                             <option value=""></option>
                             <option value="02 Lug">02 Lug</option>
@@ -153,7 +153,7 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                             <option value="07 Lug">07 Lug</option>
                         </select>
                         <br></br>
-                        <label htmlFor="time-from">Dalle ore:</label>
+                        <label className="sel-lab" htmlFor="time-from">Dalle ore:</label>
                         <select className="sel-form" ref={firstTimRef} id="time-from" name="time-from">
                             <option value=""></option>
                             <option value="15:30">15:30</option>
@@ -163,8 +163,8 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                             <option value="19:30">19:30</option>
                             <option value="20:30">20:30</option>
                         </select>
-                        <br></br>
-                        <label htmlFor="time-to">alle ore:</label>
+
+                        <label className="sel-lab" htmlFor="time-to">alle ore:</label>
                         <select className="sel-form" ref={lastTimRef} id="time-to" name="time-to">
                             <option value=""></option>
                             <option value="15:30">15:30</option>

@@ -125,8 +125,9 @@ footer {
 .canvas-container {
   position: relative;
   width: 40vw;
-  min-width: 380px;
+  min-width: 350px;
   flex: 1 1 200px;
+  margin-left: -10px;
 }
 
 .chart-settings {
@@ -138,8 +139,14 @@ footer {
   max-width: 300px;
   margin: 30px;
   border: 1px solid rgb(80, 255, 80);
-  padding: 20px;
-  border-radius: 5px;
+  padding: 20px 18px 18px 12px;
+  border-radius: 12px;
+}
+
+.chart-settings-cont {
+  display: grid;
+  align-items: baseline;
+  columns: 2;
 }
 
 .show-all {
@@ -157,6 +164,11 @@ footer {
   border-radius: 30px !important;
 }
 
+.sel-lab {
+  grid-column: 1
+}
+
 .sel-form {
-  position:static;
+  min-width: 75px;
+  grid-column: 2;
 }
