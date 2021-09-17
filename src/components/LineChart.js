@@ -71,36 +71,36 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                                 label: "Temperature 1",
                                 data: val3.slice(firstVal, lastVal),
                                 backgroundColor: 'blue',
-                                bordercolor: 'black',
-                                borderWidth: 2,
+                                borderColor: 'rgb(2, 0, 99)',
+                                borderWidth: 1,
                             },
                             {
                                 label: "T.H.I. 1",
                                 data: val4.slice(firstVal, lastVal),
-                                backgroundColor: 'black',
-                                bordercolor: 'black',
-                                borderWidth: 2,
+                                backgroundColor: 'dark grey',
+                                borderColor: 'grey',
+                                borderWidth: 1,
                             },
                             {
                                 label: "Temperature 2",
                                 data: val5.slice(firstVal, lastVal),
                                 backgroundColor: 'red',
-                                bordercolor: 'black',
-                                borderWidth: 2,
+                                borderColor: 'rgb(99, 0, 0)',
+                                borderWidth: 1,
                             },
                             {
                                 label: "T.H.I. 2",
                                 data: val6.slice(firstVal, lastVal),
                                 backgroundColor: 'green',
-                                bordercolor: 'black',
-                                borderWidth: 2,
+                                borderColor: 'rgb(3, 89, 0)',
+                                borderWidth: 1,
                             },
                             {
                                 label: "RH%",
                                 data: val7.slice(firstVal, lastVal),
-                                backgroundColor: 'green',
-                                bordercolor: 'black',
-                                borderWidth: 2,
+                                backgroundColor: 'blue',
+                                borderColor: 'rgb(2, 155, 207)',
+                                borderWidth: 1,
                             },
                         ]
                     }}
@@ -141,8 +141,6 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                             <option value="06 Lug">06 Lug</option>
                             <option value="07 Lug">07 Lug</option>
                         </select>
-                    </div>
-                    <div>
                         <label htmlFor="day-to">al giorno:</label>
                         <select ref={lastDayRef} id="day-to" name="day-to">
                             <option value=""></option>
@@ -165,8 +163,6 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                             <option value="19:30">19:30</option>
                             <option value="20:30">20:30</option>
                         </select>
-                    </div>
-                    <div>
                         <label htmlFor="time-to">alle ore:</label>
                         <select ref={lastTimRef} id="time-to" name="time-to">
                             <option value=""></option>
