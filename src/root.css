@@ -1,0 +1,23 @@
+:root{
+	--rad: 16px;
+	--radL: 24px;
+	--fg: #222222;
+	--fgl: #444444;
+	--bg: #d3d3d3;
+	--tsp: #44444410;
+	--light: var(--col1);
+
+	/* 	PALETTE 1*/
+	--col2: #0093b8;
+	--col1: #00aeda;
+    --shadlow: #32323230;
+    --shadhi: #ffffff90;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	background-color: var(--bg);
+	color: var(--fg);
+	font-family: 'DM Mono', monospace;
+}
