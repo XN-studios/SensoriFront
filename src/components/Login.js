@@ -20,7 +20,9 @@ export default function Login() {
             await login(emailRef.current.value, passwordRef.current.value)
             history.push('/')
         } catch(error) {
-            setError('Log in fallito.')
+            setLoading(false)
+            setError('Login fallito.')
+
         }
         
         return () => {
