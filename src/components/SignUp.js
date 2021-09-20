@@ -18,7 +18,7 @@ export default function SignUp() {
         e.preventDefault()
 
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            return setError('The two passwords you typed in don\'t match')
+            return setError('Le due password non corrispondono.')
         }
 
         try {
@@ -27,7 +27,7 @@ export default function SignUp() {
             await signup(emailRef.current.value, passwordRef.current.value)
             history.push('/')
         } catch(error) {
-            setError('It was not possible to create the account')
+            setError('Non è stato possibile creare l\'account.')
         }
         
         setLoading(false)
@@ -50,7 +50,7 @@ export default function SignUp() {
                             <Form.Control type="password" ref={passwordRef} required />
                         </Form.Group>
                         <Form.Group id="password-confirm">
-                            <Form.Label>Password Confirmation</Form.Label>
+                            <Form.Label>Conferma password</Form.Label>
                             <Form.Control type="password" ref={passwordConfirmRef} required />
                         </Form.Group>
                         <br></br>
@@ -60,7 +60,7 @@ export default function SignUp() {
             </Card>
             
             <div className="text-center mt-2">
-                Already have an account?<Link to='/login'>Log In</Link>
+                Hai già un account?<Link to='/login'>Accedi</Link>
             </div>
         </div>
     )

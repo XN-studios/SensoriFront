@@ -21,7 +21,7 @@ export default function Dashboard() {
       await logout()
       history.push('/login')
     } catch {
-      setError('Logout unsuccessful')
+      setError('Logout fallito')
     }
   }
 
@@ -133,7 +133,7 @@ export default function Dashboard() {
               <Entries entries={entries}
               onClick={fetchEntry}/>
             </>
-            : 'No entries to show.'}
+            : 'Nessuna entrata da mostrare.'}
         </>
         : <>
           {error && <Alert variant='danger'> {error} </Alert>}
