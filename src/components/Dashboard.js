@@ -124,9 +124,6 @@ export default function Dashboard() {
   }
 
   return (
-    <>
-    {!currentUser ?
-      <Redirect to="/login" /> :
     <div className="container">
       {showEntries ?
         <>
@@ -153,7 +150,5 @@ export default function Dashboard() {
         <Button text="Log Out" variant="link" onClick={handleLogout} buttonStyle={{backgroundColor: 'rgb(64, 168, 50)'}}/>
       </div>
     </div>
-    }
-    </>
   )
 }
