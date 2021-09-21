@@ -4,7 +4,7 @@ import Button from './Button'
 import Entries from './Entries'
 import { Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Redirect } from 'react-router-dom'
 import ChartPage from './ChartPage'
 import database from '../db'
 
