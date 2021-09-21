@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SensoriFront/static/css/main.fcc3d6d0.chunk.css",
+    "main.css": "/SensoriFront/static/css/main.2c3e469b.chunk.css",
     "main.js": "/SensoriFront/static/js/main.516bb320.chunk.js",
     "main.js.map": "/SensoriFront/static/js/main.516bb320.chunk.js.map",
     "runtime-main.js": "/SensoriFront/static/js/runtime-main.e6369417.js",
@@ -12,14 +12,14 @@
     "static/js/3.12b8c9dd.chunk.js.map": "/SensoriFront/static/js/3.12b8c9dd.chunk.js.map",
     "index.html": "/SensoriFront/index.html",
     "static/css/2.d45d6843.chunk.css.map": "/SensoriFront/static/css/2.d45d6843.chunk.css.map",
-    "static/css/main.fcc3d6d0.chunk.css.map": "/SensoriFront/static/css/main.fcc3d6d0.chunk.css.map",
+    "static/css/main.2c3e469b.chunk.css.map": "/SensoriFront/static/css/main.2c3e469b.chunk.css.map",
     "static/js/2.4578ce7c.chunk.js.LICENSE.txt": "/SensoriFront/static/js/2.4578ce7c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e6369417.js",
     "static/css/2.d45d6843.chunk.css",
     "static/js/2.4578ce7c.chunk.js",
-    "static/css/main.fcc3d6d0.chunk.css",
+    "static/css/main.2c3e469b.chunk.css",
     "static/js/main.516bb320.chunk.js"
   ]
 }
