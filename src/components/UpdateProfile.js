@@ -33,7 +33,7 @@ export default function UpdateProfile() {
 
 
         Promise.all(promises).then(() => {
-            history.push('/')
+            history.push('/SensoriFront')
         }).catch(() => {
             setError('Modifica dell\'account fallita.')
         }).finally(() => {
@@ -70,7 +70,7 @@ export default function UpdateProfile() {
                 </Card.Body>
             </Card>
             <div className="text-center mt-2">
-                <Link to='/'>Annulla</Link>
+                <Link to='/SensoriFront'>Annulla</Link>
             </div>
         </div>
     )

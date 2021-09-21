@@ -25,7 +25,7 @@ export default function SignUp() {
             setError("")
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            history.push('/')
+            history.push('/SensoriFront')
         } catch(error) {
             setError('Non è stato possibile creare l\'account.')
         }

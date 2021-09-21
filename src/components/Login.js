@@ -18,7 +18,7 @@ export default function Login() {
             setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push('/')
+            history.push('/SensoriFront')
         } catch(error) {
             setLoading(false)
             setError('Login fallito.')
@@ -34,7 +34,7 @@ export default function Login() {
     return (
         <>
             {currentUser ?
-            <Redirect to="/" /> :
+            <Redirect to="/SensoriFront" /> :
             <div>
                 <Card className="log-in">
                     <Card.Body>

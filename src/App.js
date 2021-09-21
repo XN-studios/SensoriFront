@@ -21,7 +21,7 @@ function App() {
             <Header />
             <Switch>
               <Route path="/signup" component={SignUp} />
-              <PrivateRoute path="/" exact component={Dashboard}/>
+              <PrivateRoute path="/SensoriFront" exact component={Dashboard}/>
               <PrivateRoute path="/update-profile" exact component={UpdateProfile}/>
               <Route path='/login' component={Login}/>
               <Route path='/forgot-password' component={ForgotPassword}/>
