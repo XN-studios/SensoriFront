@@ -126,7 +126,7 @@ export default function Dashboard() {
   return (
     <>
     {!currentUser ?
-      <Redirect to="/" /> :
+      <Redirect to="/login" /> :
     <div className="container">
       {showEntries ?
         <>
