@@ -10,7 +10,7 @@ import database from '../db'
 
 export default function Dashboard() {
 
-  const { logout } = useAuth()
+  const { currentUser, logout } = useAuth()
   const [error, setError] = useState('')
   const history = useHistory()
 
