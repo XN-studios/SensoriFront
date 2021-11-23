@@ -5,7 +5,7 @@ const Entry = ({ entry, onClick }) => {
         <div className="entry" onClick={() => onClick(entry.id)}>
             <h3>{entry.label}
                 <CgArrowRightO 
-                style={{ color: 'green', cursor: 'pointer' }}
+                style={{ color: 'skyblue', cursor: 'pointer' }}
                 />
             </h3>
         </div>

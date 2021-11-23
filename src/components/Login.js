@@ -10,7 +10,8 @@ export default function Login() {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useHistory()
-
+    let root = document.documentElement;
+    root.style.setProperty('--bg','#ffffffff')
     async function handleSubmit(e) {
         e.preventDefault();
 
@@ -38,28 +39,28 @@ export default function Login() {
             <div>
                 <Card className="log-in">
                     <Card.Body>
-                        <h2>Log In</h2>
+                        <h2 align="center">Log In</h2>
                         <Form onSubmit={handleSubmit}>
                             {error && <Alert variant="danger">{error}</Alert>}
                             <Form.Group id="email">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" ref={emailRef} required />
+                                
+                                <Form.Control placeholder="Email "type="email" ref={emailRef} required />
                             </Form.Group>
                             <Form.Group id="password">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" ref={passwordRef} required />
+                                
+                                <Form.Control placeholder="Password" type="password" ref={passwordRef} required />
                             </Form.Group>
                             <br></br>
-                            <Button disabled={loading} className="w-100" type="submit">Log In</Button>
+                            <Button disabled={loading} className="w-100" type="submit" >View Chart</Button>
                         </Form>
                         <div className="text-center mt-2">
                             <Link to="/forgot-password">Password dimenticata?</Link>
+                            <br/>
+                            Non hai ancora un account?<Link to='/signup'>Creane uno</Link>
                         </div>
                     </Card.Body>
                 </Card>
-                <div className="text-center mt-2">
-                    Non hai ancora un account?<Link to='/signup'>Creane uno</Link>
-                </div>
+            
             </div>}
         </>
     )

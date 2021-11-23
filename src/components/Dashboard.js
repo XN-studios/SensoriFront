@@ -1,29 +1,20 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
-import Button from './Button'
 import Entries from './Entries'
 import { Alert } from 'react-bootstrap'
-import { useAuth } from '../contexts/AuthContext'
-import { useHistory, Redirect } from 'react-router-dom'
+//import { useAuth } from '../contexts/AuthContext'
+//import { useHistory, Redirect } from 'react-router-dom'
 import ChartPage from './ChartPage'
 import database from '../db'
 
 export default function Dashboard() {
 
-  const { currentUser, logout } = useAuth()
-  const [error, setError] = useState('')
-  const history = useHistory()
+ // const { currentUser, logout } = useAuth()
+const [error] = useState('')
+  //const history = useHistory()
 
-  async function handleLogout() {
-    setError('')
-
-    try {
-      await logout()
-      history.push('/login')
-    } catch {
-      setError('Logout fallito')
-    }
-  }
+  let root = document.documentElement;
+    root.style.setProperty('--bg','#f5f5f5f5')
 
   const [showEntries, setShowEntries] = useState(true)
   const [entries, setEntries] = useState([])
@@ -143,12 +134,7 @@ export default function Dashboard() {
           // val9 = {val9} val10 = {val10} 
           />
         </> }
-      <div className="text-center mt-2">
-        <br></br>
-        <br></br>
-        <br></br>
-        <Button text="Log Out" variant="link" onClick={handleLogout} buttonStyle={{backgroundColor: 'rgb(64, 168, 50)'}}/>
-      </div>
+      
     </div>
   )
 }
