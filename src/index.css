@@ -40,7 +40,7 @@
 	margin: 1rem !important;
 	padding: 1.1rem !important;
 
-	transition: all 0.4s !important;
+	/*transition: all 0.4s !important;*/
 	cursor: pointer !important;
 	display: inline-block !important;
 	font-family: inherit !important;
@@ -49,20 +49,22 @@
 }
 
 .btn:hover{
-	transform: scale(1.1) !important;
-	color: var(--fg) !important;
+  color: var(--fg) !important;
+  background-color:rgb(151, 219, 241) !important;
+	/*transform: scale(1.1) !important;
   background-color: var(--bg) !important;
   border-radius: var(--radL) !important;
   box-shadow: 5px 5px 10px var(--shadlow), -5px -5px 10px var(--shadhi) !important;
+*/
 }
 
 .btn:active{
-  background-color: var(--bg) !important;
-	transform: scale(1.05) !important;
+  background-color: rgb(151, 219, 241) !important;
+	/*transform: scale(1.05) !important;
   border-radius: var(--radL) !important;
   box-shadow: -5px -5px 10px var(--shadlow), 5px 5px 10px var(--shadhi) !important;
-	
 	transition: .3s !important;
+  */
 }
 
 .entry {
