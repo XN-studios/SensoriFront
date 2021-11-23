@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  margin: 1.2vw;
+  margin: 0;
   padding: 0;
 }
 
@@ -11,22 +11,25 @@
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid;
+  border: 0px solid !important;
   padding: 30px;
   border-radius: 5px;
 }
 
 .header {
+  background-color: var(--bgh);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
+  margin: 0;
 }
 
 .btn {
-	color: var(--col1) !important;
-  background-color: var(--bg) !important;
-  border-radius: var(--radL) !important;
+  color: white;
+  background-color: skyblue !important;
+	/*color: var(--col1) !important;
+  background-color: var(--bg) !important;*/
+  border-radius: 0 !important;
   border: 0px !important;
 
 	font-family: '', monospace !important;
@@ -70,8 +73,9 @@
 	background-color: inherit;
 
 	text-align: left;
-	margin-left: 20%;
-	margin-right: 20%;
+	/*margin-left: 20%;
+	margin-right: 20%;*/
+  margin: 10px;
 	margin-top: 3rem;
 	margin-bottom: 3rem;
 	padding: 3rem;
@@ -144,13 +148,19 @@
 }
 
 footer {
-  margin-top: 30px;
-  text-align: center;
+  /*margin-top: 30px;
+  text-align: center;*/
+  background-color: var(--bgh);
+  position: relative;
+  bottom: 0;
+  margin-top: auto;
 } 
 
 /* DASHBOARD */
 .container {
   max-width: 90vw !important ;
+  display: inline-flex;
+  justify-content: space-between;
 }
 
 /* CHART PAGE */
@@ -163,13 +173,14 @@ footer {
 
 .canvas-container {
   position: relative;
-  width: 40vw;
+  width: 60vw;
   min-width: 350px;
   flex: 1 1 200px;
   margin-left: -10px;
 }
 
 .chart-settings {
+  background-color: var(--bgh);
   position: relative;
   flex: 0.5 0.2 10vw;
   width: 20vw;
@@ -177,9 +188,9 @@ footer {
   min-width: 230px;
   max-width: 300px;
   margin: 30px;
-  border: 1px solid rgb(80, 255, 80);
+  border: 0px solid rgb(80, 255, 80);
   padding: 20px 18px 18px 12px;
-  border-radius: 12px;
+  border-radius: 0px;
 }
 
 .chart-settings-cont {
@@ -221,4 +232,11 @@ element.style {
   color: var(--col2) !important;
   cursor: pointer;
   text-align: right !important;
+}
+
+.router{
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 !important;
 }

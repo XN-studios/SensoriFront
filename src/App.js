@@ -17,6 +17,7 @@ function App() {
     <AuthProvider>
       <div>
         <div className="w-100">
+          <div class="router">
           <Router>
             <Header />
             <Switch>
@@ -30,6 +31,7 @@ function App() {
             <Footer />
           </Router>
         </div>
+      </div>
       </div>
     </AuthProvider>
   );

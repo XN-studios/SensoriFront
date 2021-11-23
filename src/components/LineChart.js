@@ -5,7 +5,7 @@ import Button from './Button'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
 
-const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10}) => {
+const LineChart = ({ onClick, val1, val2, val3, val4, val5, val6, val7, val8, val9, val10}) => {
 
     const firstDayRef = useRef()
     const lastDayRef = useRef()
@@ -179,7 +179,8 @@ const LineChart = ({ val1, val2, val3, val4, val5, val6, val7, val8, val9, val10
                     <MdKeyboardArrowRight style={{ color: 'grey', marginRight: '0'}}/>
                     <button className="show-all" onClick={setDefault}>Mostra tutti</button>
                     <br></br>
-                    <Button text="Render" onClick={setBoundaries} buttonStyle={{backgroundColor: 'rgb(64, 168, 50)', float: "right"}} />
+                    <Button text="Genera Render" onClick={setBoundaries} buttonStyle={{backgroundColor: 'skyblue', float: "right"}} />
+                    <Button text="Indietro" onClick={onClick} buttonStyle={{backgroundColor: 'skyblue', float: "right"}} />
                 </Form>
             </div>
         </>

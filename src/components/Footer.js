@@ -1,15 +1,15 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 
 const Footer = () => {
-
+    const { currentUser} = useAuth()
     const location = useLocation();
-
     return (
+
         <footer>
-            <p>Copyright &copy; 2021</p>
-            {location.pathname !== '/about' ?
-            <Link to="/about">About</Link> :
-            <></>}
+            {currentUser ?
+            <p>Copyright &copy; 2021</p> :<></>}
+            
         </footer>
     )
 }
