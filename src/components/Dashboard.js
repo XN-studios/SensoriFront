@@ -121,8 +121,10 @@ const [error] = useState('')
           {error && <Alert variant='danger'> {error} </Alert>}
           {entries.length > 0 ?
             <>
+              <table>
               <Entries entries={entries}
               onClick={fetchEntry}/>
+              </table>
             </>
             : 'Nessuna entrata da mostrare.'}
         </>

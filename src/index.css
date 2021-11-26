@@ -160,9 +160,9 @@ footer {
 
 /* DASHBOARD */
 .container {
-  max-width: 90vw !important ;
+  max-width: 100vw !important ;
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 /* CHART PAGE */
@@ -175,10 +175,10 @@ footer {
 
 .canvas-container {
   position: relative;
-  width: 50vw;
+  width: 52vw;
   min-width: 350px;
   flex: 1 1 200px;
-  margin-left: -10px;
+  /*margin-left: -10px;*/
 }
 
 .chart-settings {
@@ -241,4 +241,18 @@ element.style {
   flex-direction: column;
   min-height: 100vh;
   margin: 0 !important;
+}
+
+table {
+width: 90%;
+border-collapse: collapse;
+}
+td{
+  height:83.8vh;  
+  text-align: left;
+  padding-left: 1vw;
+  vertical-align: middle;
+  border-left: 1px solid grey !important;
+  border-right: 0.5px solid grey !important;
+
 }
