@@ -216,7 +216,7 @@ footer {
   /*margin-left: -10px;*/
 }
 
-.chart-settings {
+/* .chart-settings {
   background-color: var(--bgh);
   position: relative;
   flex: 0.5 0.2 10vw;
@@ -228,6 +228,23 @@ footer {
   border: 0px solid rgb(80, 255, 80);
   padding: 20px 18px 18px 12px;
   border-radius: 0px;
+} */
+
+.chart-settings {
+    background-color: var(--bgh);
+    position: relative;
+    -webkit-flex: 0.5 0.2 10vw;
+    flex: 0.5 0.2 10vw;
+    width: 20vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 30px;
+    border: 0 solid #50ff50;
+    padding: 20px 18px 18px 12px;
+    border-radius: 0;
 }
 
 .chart-settings-cont {
