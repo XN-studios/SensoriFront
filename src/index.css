@@ -16,19 +16,33 @@
   border-radius: 5px;
 }
 
-.header {
+/* .header {
   background-color: var(--bgh);
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
+} */
+
+.header {
+    background-color: var(--bgh);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    block-size: 100% !important;
 }
 
+/*
 .btn {
   color: white;
   background-color: skyblue !important;
-	/*color: var(--col1) !important;
-  background-color: var(--bg) !important;*/
+	color: var(--col1) !important;
+  background-color: var(--bg) !important;
   border-radius: 0 !important;
   border: 0px !important;
 
@@ -40,12 +54,33 @@
 	margin: 1rem !important;
 	padding: 1.1rem !important;
 
-	/*transition: all 0.4s !important;*/
+		transition: all 0.4s !important;
 	cursor: pointer !important;
 	display: inline-block !important;
 	font-family: inherit !important;
 	font-size: 14px !important;
 	font-weight: bold !important;
+}
+
+*/
+
+.btn {
+    color: #fff;
+    background-color: #87ceeb!important;
+    border-radius: 0px !important;
+    border: 0px !important;
+    font-family: "",monospace!important;
+    text-align: center !important;
+    margin: 0;
+    padding: 1rem;
+    cursor: pointer!important;
+    display: inline-block!important;
+    font-family: inherit!important;
+    font-size: 14px!important;
+    font-weight: 700!important;
+    align-items: center !important;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
 }
 
 .btn:hover{
@@ -201,11 +236,20 @@ footer {
   columns: 2;
 }
 
-.show-all {
+/* .show-all {
   color: grey;
   padding-left: 0;
   background-color: transparent;
   border-style: hidden;
+} */
+
+.show-all {
+    color: grey;
+    padding-left: 0;
+    background-color: transparent;
+    border-style: hidden;
+    padding: 20px;
+    padding-bottom: 40px;
 }
 
 .show-all:hover {
@@ -255,4 +299,18 @@ td{
   border-left: 1px solid grey !important;
   border-right: 0.5px solid grey !important;
 
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0 !important;
+    margin-bottom: 1.7rem !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+}
+
+p {
+    margin-top: 1.7rem !important;
+    margin-bottom: 1.7rem !important;
+    margin-left: 20px !important;
 }
